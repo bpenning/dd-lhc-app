@@ -14,6 +14,8 @@ DEFAULT_gu = 1.0
 DEFAULT_gd = 1.0
 DEFAULT_gs = 1.0
 
+global mn, v, fup, fdp, fsp, fTG, Delta_u_p, Delta_d_p, Delta_s_p, Delta_u_n, Delta_d_n, Delta_s_n
+
 # Nucleon mass [GeV] and conversion: cm^2 -> GeV^-2 (as in user's code)
 mn = 0.938
 conv_units = 2.568 * pow(10.0, 27.0)
