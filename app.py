@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="DM: Direct ↔ Indirect Mapper", layout="wide")
 
-st.title("Dark Matter: Direct ↔ Indirect Mapper (MVP)")
+st.title("Dark Matter: Direct ↔ Indirect Mapper (MVP) — v2")
 
 with st.sidebar:
     st.header("Model")
@@ -134,7 +134,6 @@ with tab1:
         if mchi_max > mchi_min and npoints > 1:
             mchis = np.logspace(np.log10(max(mchi_min, 1e-6)), np.log10(mchi_max), int(npoints))
             sigma_vals = []
-            Gamma_val = mediator_width(Mmed, gq, gchi, mchi)  # mediator width only depends weakly on mchi via χ threshold; keep it simple and use current mchi for width or compute per-point if desired
             # compute per-point (more correct)
             sigma_vals = [sigma_SI_per_nucleon(mc, Mmed, gchi, gq) for mc in mchis]
             fig.add_trace(go.Scatter(x=mchis, y=sigma_vals, mode='lines', name='Model sweep (σ_SI)'))
